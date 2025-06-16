@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <!-- Background -->
+  <rect width="64" height="64" rx="16" fill="#7e22ce" />
+  
+  <!-- Star icon -->
+  <path d="M32 12L38.4 26.2L54 28.8L43 39.4L45.8 55L32 47.4L18.2 55L21 39.4L10 28.8L25.6 26.2L32 12Z" 
+    stroke="white" 
+    strokeWidth="4" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    fill="white" 
+  />
+</svg>

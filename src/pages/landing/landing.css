@@ -1,0 +1,161 @@
+/* Slack Landing Page Styles */
+
+/* Custom colors */
+:root {
+  --slack-purple: #611f69;
+  --slack-purple-light: #7c3085;
+  --slack-blue: #36c5f0;
+  --slack-green: #2eb67d;
+  --slack-yellow: #ecb22e;
+  --slack-red: #e01e5a;
+}
+
+/* Hero section gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #fff 0%, #f4eff8 100%);
+}
+
+/* Animated elements */
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-fast {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Pulse animation for highlights */
+.pulse-highlight {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Slack brand colors for UI elements */
+.bg-slack-purple {
+  background-color: var(--slack-purple);
+}
+
+.bg-slack-blue {
+  background-color: var(--slack-blue);
+}
+
+.bg-slack-green {
+  background-color: var(--slack-green);
+}
+
+.bg-slack-yellow {
+  background-color: var(--slack-yellow);
+}
+
+.bg-slack-red {
+  background-color: var(--slack-red);
+}
+
+.text-slack-purple {
+  color: var(--slack-purple);
+}
+
+.text-slack-blue {
+  color: var(--slack-blue);
+}
+
+.text-slack-green {
+  color: var(--slack-green);
+}
+
+.text-slack-yellow {
+  color: var(--slack-yellow);
+}
+
+.text-slack-red {
+  color: var(--slack-red);
+}
+
+/* Hover animations */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Custom scrollbar for the landing page */
+.landing-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.landing-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.landing-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.landing-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive video container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Slack-style buttons */
+.btn-slack-primary {
+  background-color: var(--slack-purple);
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.btn-slack-primary:hover {
+  background-color: var(--slack-purple-light);
+}
+
+/* Slack-style card shadows */
+.slack-card-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.slack-card-shadow:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}

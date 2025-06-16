@@ -1,0 +1,339 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Updated Slack-specific colors */
+    --slack-aubergine: #611f69;
+    --slack-dark-aubergine: #4a154b;
+    --slack-dark: #1a1d29;
+    --slack-light-gray: #f8f8f8;
+    --slack-white: #ffffff;
+    --slack-green: #2eb67d;
+    --slack-amber: #ecb22e;
+    --slack-red: #e01e5a;
+    --slack-border: #e0e0e0;
+    --slack-text-primary: #1d1c1d;
+    --slack-text-secondary: #616061;
+    --slack-text-muted: #868686;
+    --slack-chat-bg: #1D1D1D;
+    --slack-message-hover: #2a2a2a;
+    --slack-input-bg: #2a2a2a;
+    --slack-input-border: #3a3a3a;
+    --slack-text-white: #ffffff;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    line-height: 1.46666667;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Dark theme for modals and popups */
+  .modal-dark {
+    @apply bg-gray-800 text-white border-gray-600;
+  }
+
+  .modal-dark input,
+  .modal-dark textarea,
+  .modal-dark select {
+    @apply bg-gray-700 border-gray-600 text-white placeholder-gray-400;
+  }
+
+  .modal-dark button {
+    @apply text-white;
+  }
+
+  /* Hide scrollbars */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Apply scrollbar-hide to all scrollable elements */
+  div, main, aside, section, nav, ul, ol {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  div::-webkit-scrollbar, main::-webkit-scrollbar, aside::-webkit-scrollbar, 
+  section::-webkit-scrollbar, nav::-webkit-scrollbar, ul::-webkit-scrollbar, ol::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Remove scrollbars from text inputs and textareas */
+  textarea, input[type="text"], input[type="password"], input[type="email"] {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: auto;
+  }
+  
+  textarea::-webkit-scrollbar, 
+  input[type="text"]::-webkit-scrollbar, 
+  input[type="password"]::-webkit-scrollbar, 
+  input[type="email"]::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+@layer utilities {
+  .slack-shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  
+  /* AI Icon Animations */
+  .ai-icon-glow {
+    animation: glow 2s infinite alternate;
+    filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.5));
+  }
+  
+  .ai-icon-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ai-icon-shine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+  }
+  
+  @keyframes glow {
+    0% {
+      filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.5));
+    }
+    100% {
+      filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.8));
+    }
+  }
+  
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+  }
+  
+  .slack-shadow-lg {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .text-slack-primary {
+    color: var(--slack-text-primary);
+  }
+
+  .text-slack-secondary {
+    color: var(--slack-text-secondary);
+  }
+
+  .text-slack-muted {
+    color: var(--slack-text-muted);
+  }
+
+  .text-slack-white {
+    color: var(--slack-text-white);
+  }
+
+  .bg-slack-aubergine {
+    background-color: var(--slack-aubergine);
+  }
+
+  .bg-slack-dark-aubergine {
+    background-color: var(--slack-dark-aubergine);
+  }
+
+  .bg-slack-light-gray {
+    background-color: var(--slack-light-gray);
+  }
+
+  .bg-slack-white {
+    background-color: var(--slack-white);
+  }
+
+  .bg-slack-chat {
+    background-color: var(--slack-chat-bg);
+  }
+
+  .bg-chat-dark {
+    background-color: #1D1D1D;
+  }
+
+  .bg-slack-message-hover {
+    background-color: var(--slack-message-hover);
+  }
+
+  .bg-slack-input {
+    background-color: var(--slack-input-bg);
+  }
+
+  .border-slack {
+    border-color: var(--slack-border);
+  }
+
+  .border-slack-input {
+    border-color: var(--slack-input-border);
+  }
+
+  .text-11 {
+    font-size: 11px;
+  }
+
+  .text-13 {
+    font-size: 13px;
+  }
+
+  .text-15 {
+    font-size: 15px;
+  }
+
+  .text-18 {
+    font-size: 18px;
+  }
+
+  /* Animation keyframes */
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-out-right {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Animation classes */
+  .animate-slide-in-right {
+    animation: slide-in-right 0.3s ease-out;
+  }
+
+  .animate-slide-out-right {
+    animation: slide-out-right 0.3s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out;
+  }
+}
